@@ -2,19 +2,14 @@
 /*<![CDATA[*/
         // Create a URL object from the current window location
         const currentUrl = new URL(window.location.href);
-
-        // Get the URLSearchParams object, which allows you to work with query parameters
         const urlParams = currentUrl.searchParams;
 
-        // Check if the 'saga' parameter exists in the URL
         if (urlParams.has('saga')) {
             console.log("DEBUG SCRIPT: STEP 1 - URL check passed: '?saga' is in the URL.");
 
-            // Selects all elements with the class 'buy-button' that are inside an element with the class 'product-container'.
             const b = document.querySelectorAll('.product-container .buy-button');
             console.log("DEBUG SCRIPT: STEP 2 - Found buy buttons (b.length):", b.length);
 
-            // Function to smoothly scroll to an element
             function smoothScrollTo(element, duration) {
                 const start = window.scrollY;
                 const target = element.getBoundingClientRect().top + window.scrollY;
@@ -49,12 +44,11 @@
                 requestAnimationFrame(animation);
             }
 
-            // Check if any buy buttons exist
             if (b.length > 0) {
                 const firstProductContainer = document.querySelector('.product-container');
                 console.log("DEBUG SCRIPT: STEP 3 - Found first product container:", firstProductContainer);
                 if (firstProductContainer) {
-                    smoothScrollTo(firstProductContainer, 2000); // Scroll to the first product container over 2 seconds
+                    smoothScrollTo(firstProductContainer, 2000);
                 } else {
                     console.log("DEBUG SCRIPT: Error - No element with class 'product-container' found to scroll to.");
                 }
