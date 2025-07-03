@@ -1,6 +1,6 @@
 // Check if the current URL ends with '/?saga'
 const currentUrl = window.location.href;
-if (currentUrl.endsWith('/?saga')) {
+if (currentUrl.endsWith('?saga')) {
 
     // Selects all elements with the class 'buy-button' that are inside an element with the class 'product-container'.
     const b = document.querySelectorAll('.product-container .buy-button');
